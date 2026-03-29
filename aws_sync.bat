@@ -1,0 +1,1 @@
+aws s3 sync . s3://info.bornino.net --delete --exclude ".git/*" --content-type "text/html; charset=utf-8"
