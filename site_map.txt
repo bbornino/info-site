@@ -1,0 +1,19 @@
+Home
+ ├── Skills & Tech
+ ├── Projects
+ │    ├── Weather App
+ │    ├── Mensa Member Connect
+ │    ├── Django React Job Search Tracker
+ │    │    ├── Django React Dashboard and Login
+ │    │    ├── Django React Opportunity Tracking
+ │    │    ├── Django React Job Sites
+ │    │    ├── Django React Job Postings
+ │    │    ├── Django React Reports
+ │    │    ├── Django React RESTful API
+ │    ├── PHP Laravel React Recruitment Tracker
+ │    ├── PHP Yii Job Search
+ │    ├── Ruby App
+ │    └── Work Projects
+ ├── Static Site (AWS S3)    Hover: “A static site hosted on AWS S3 + CloudFront where I document infrastructure and front-end experiments.”
+ ├── Work/Life Balance
+ └── Search

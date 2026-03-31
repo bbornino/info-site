@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Experiments - Static Site</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="experiments.html">Experiments</a>
+    </nav>
+
+    <div class="container">
+        <h1>Frontend & AWS Experiments</h1>
+
+        <p>This page is used to test JavaScript functionality and AWS-backed services.</p>
+
+        <h2>Coming Soon</h2>
+        <ul>
+            <li>Weather API (AWS Lambda)</li>
+            <li>Async fetch demos</li>
+            <li>Dynamic UI rendering</li>
+        </ul>
+
+        <h2>Test Interaction</h2>
+        <button onclick="showMessage()">Click Me</button>
+        <p id="output"></p>
+    </div>
+
+
+    <script>
+        function showMessage() {
+            document.getElementById("output").innerText = "JavaScript is working!";
+        }
+    </script>
+    <script>
+        fetch('nav.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('nav').innerHTML = data;
+
+                const links = document.querySelectorAll('nav a');
+                const current = window.location.pathname.split('/').pop();
+
+                links.forEach(link => {
+                    if (link.getAttribute('href') === current) {
+                        link.style.color = '#000';
+                    }
+                });
+            });
+    </script>
+</body>
+
+</html>
