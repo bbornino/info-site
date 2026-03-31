@@ -8,9 +8,10 @@
 </head>
 
 <body>
-    <nav>
+    <nav id="nav">
         <a href="index.html">Home</a>
         <a href="experiments.html">Experiments</a>
+        <button id="darkModeToggle">🌙 Dark Mode</button>
     </nav>
 
     <div class="container">
@@ -36,22 +37,7 @@
             document.getElementById("output").innerText = "JavaScript is working!";
         }
     </script>
-    <script>
-        fetch('nav.html')
-            .then(res => res.text())
-            .then(data => {
-                document.getElementById('nav').innerHTML = data;
-
-                const links = document.querySelectorAll('nav a');
-                const current = window.location.pathname.split('/').pop();
-
-                links.forEach(link => {
-                    if (link.getAttribute('href') === current) {
-                        link.style.color = '#000';
-                    }
-                });
-            });
-    </script>
+    <script src="nav.js" defer />
 </body>
 
 </html>

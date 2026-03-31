@@ -8,12 +8,10 @@
 </head>
 
 <body>
-  <nav>
+  <nav id="nav">
     <a href="index.html">Home</a>
     <a href="experiments.html">Experiments</a>
-    <button class="toggle-btn" onclick="toggleDarkMode()">
-      🌙 Dark Mode
-    </button>
+    <button id="darkModeToggle">🌙 Dark Mode</button>
   </nav>
 
   <div class="container">
@@ -38,63 +36,7 @@
     <p>View the source code: <a href="https://github.com/bbornino/info-site">https://github.com/bbornino/info-site</a>
     </p>
   </div>
-
-  <script>
-    fetch('nav.html')
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('nav').innerHTML = data;
-
-        const links = document.querySelectorAll('nav a');
-        const current = window.location.pathname.split('/').pop();
-
-        links.forEach(link => {
-          if (link.getAttribute('href') === current) {
-            link.style.color = '#000';
-          }
-        });
-      });
-  </script>
-
-  <script>
-    // Load nav
-    fetch('nav.html')
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('nav').innerHTML = data;
-        updateButtonText();
-      });
-
-    // Toggle function
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark');
-
-      const isDark = document.body.classList.contains('dark');
-      localStorage.setItem('darkMode', isDark);
-
-      updateButtonText();
-    }
-
-    // Update button label
-    function updateButtonText() {
-      const btn = document.querySelector('.toggle-btn');
-      if (!btn) return;
-
-      if (document.body.classList.contains('dark')) {
-        btn.textContent = '☀️ Light Mode';
-      } else {
-        btn.textContent = '🌙 Dark Mode';
-      }
-    }
-
-    // Load saved preference
-    (function () {
-      const saved = localStorage.getItem('darkMode');
-      if (saved === 'true') {
-        document.body.classList.add('dark');
-      }
-    })();
-  </script>
+  <script src="nav.js" defer />
 </body>
 
 </html>
